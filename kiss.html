@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13 Feb — Kiss Day</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, #e6c2b855 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, #c7b7ff55 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, #f3c4d855 0%, transparent 50%),
+    linear-gradient(135deg,#141316,#232026,#141316);
+
+  color:#f5f1ed;
+  min-height:100svh;
+  padding:22px 16px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background:rgba(18,16,20,.8);
+  backdrop-filter:blur(18px);
+  border-radius:28px;
+  padding:34px 26px;
+  box-shadow:0 35px 100px rgba(0,0,0,.8);
+  margin-top:10px;
+  text-align:center;
+}
+
+.name{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  font-style:italic;
+  margin-bottom:22px;
+  opacity:.95;
+}
+
+.step{display:none}
+.step.active{display:block}
+
+.text{
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:24px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border-radius:22px;
+  border:none;
+  font-size:14.5px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#f3c4d8,#d4bfa8);
+  color:#1b1a1d;
+}
+
+.fade{
+  animation:fadeIn 1.4s ease forwards;
+  opacity:0;
+}
+@keyframes fadeIn{
+  to{opacity:1}
+}
+
+.dots{
+  font-size:26px;
+  letter-spacing:6px;
+}
+
+.footer{
+  margin-top:26px;
+  font-size:14px;
+  opacity:.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="name">Dhruti</div>
+
+  <!-- STEP 1 -->
+  <div class="step active" id="s1">
+    <div class="text fade">
+      आज Kiss Day है।
+    </div>
+    <button onclick="go(2)">आगे</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="s2">
+    <div class="text fade">
+      और एक पल के लिए…
+      <br><br>
+      मुझे लगा।
+    </div>
+    <button onclick="go(3)">क्या?</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="s3">
+    <div class="text fade">
+      <b>Bas ek tere sir par kiss…</b>
+    </div>
+    <div class="text dots fade">…</div>
+    <button onclick="go(4)">फिर?</button>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" id="s4">
+    <div class="text fade">
+      फिर मैं रुक गया।
+    </div>
+    <div class="text fade">
+      इसलिए नहीं कि डर लगा…
+      <br><br>
+      बल्कि इसलिए कि
+      <br>
+      <b>तू comfortable रहे।</b>
+    </div>
+    <button onclick="go(5)">समझी</button>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step" id="s5">
+    <div class="text fade">
+      और शायद वही
+      <br>
+      मेरी तरफ से
+      <br><br>
+      <b>सबसे अच्छी kiss थी।</b>
+    </div>
+    <div class="footer fade">
+      — your best friend
+    </div>
+  </div>
+
+</div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s'+n).classList.add('active');
+}
+</script>
+
+</body>
+</html>
